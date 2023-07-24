@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import { BooksContext } from '../context/context'
+import React from 'react'
+import { useBookContext } from '../context/context'
 import { BOOK_GENRES } from '../App'
 
 interface HeaderProps {
   handleChageCategory: (event: React.ChangeEvent<HTMLSelectElement>) => void
 }
 const HeaderComponent: React.FC<HeaderProps> = ({ handleChageCategory }) => {
-  const { library, readingBooks } = useContext(BooksContext)
+  const { library, readingBooks } = useBookContext()
 
   console.log(library)
   return (

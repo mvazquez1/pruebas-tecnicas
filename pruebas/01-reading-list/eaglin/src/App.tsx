@@ -7,6 +7,7 @@ import BookList from './components/BookList'
 
 import HeaderComponent from './components/Header'
 import { useSetBooks } from './hooks/useSetBooks'
+import { type LibraryElement } from './types'
 export enum BOOK_GENRES {
   CYFY = 'Ciencia ficción',
   TERROR = 'Terror',
@@ -22,7 +23,7 @@ function App () {
 
   // const { readingBooks } = useSetBooks(library, filter)
 
-  const filterBooks = library.filter(ele => {
+  const filterBooks = library.filter((ele: LibraryElement) => {
     if (filter === BOOK_GENRES.ALL) return true
     else return filter === ele.book.genre
   })
